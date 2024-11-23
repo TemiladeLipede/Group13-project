@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="Drivers.CSS">
+  <title>Driver Dashboard</title>
+</head>
+<body>
+  <header>
+    <h1>Welcome, John Driver</h1>
+    <button id="logoutButton">Logout</button>
+  </header>
+  <main>
+    <section class="overview">
+      <h2>Driver Overview</h2>
+      <p><strong>Name:</strong> Driver</p>
+      <p><strong>Vehicle:</strong> </p>
+      <p><strong>Status:</strong> </p>
+    </section>
+    <section class="recent-activity">
+      <h2>Recent Trips</h2>
+      <ul>
+        <li>Trip #1001 completed to ......</li>
+        <li>Trip #1002 completed to Airport - .......</li>
+        <li>Trip #1003 pending to Midtown</li>
+      </ul>
+    </section>
+  </main>
+  <script>
+    document.getElementById("logoutButton").addEventListener("click", function () {
+  const confirmLogout = confirm("Are you sure you want to log out?");
+  if (confirmLogout) {
+    window.location.href = "driver-login.html";
+  }
+});
+  </script>
+</body>
+</html>
+</body>
+</html>

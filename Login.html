@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./Login.Css">
+    <title>LogIn Page</title>
+</head>
+<body>
+    <div class="login-container">
+          <h2>Login</h2>
+          <div class="form-group">
+            <label>>Username</label>
+            <input type="text" id="username">
+          </div>
+          <div class="form-group">
+            <label for="password">Password</label>
+            <input type="password" id="password" name="password" placeholder="Enter your password" required>
+          </div>
+           
+          <button type="submit" class="login-button">Login</button>
+          <p class="signup-text">Don't have an account? <a href="Sign-up.html">Sign up</a></p><br>
+          <p class="Forgot-password"><a href="forgot password">Forgot-password???</a></p>
+
+       </div>
+       <script>
+       document.addEventListener("DOMContentLoaded", () => {
+        const usernameInput = document.getElementById("username");
+        const passwordInput = document.getElementById("password");
+        const loginButton = document.querySelector(".login-button");
+      
+        loginButton.addEventListener("click", (event) => {
+          // Prevent the form from submitting (simulating real-world behavior)
+          event.preventDefault();
+      
+          // Clear any previous error messages
+          clearErrors();
+      
+          // Perform validation
+          const errors = [];
+          if (!usernameInput.value.trim()) {
+            errors.push("Username is required.");
+            displayError(usernameInput, "Username is required.");
+          }
+      
+          if (!passwordInput.value.trim()) {
+            errors.push("Password is required.");
+            displayError(passwordInput, "Password is required.");
+          }
+      
+          // If no errors, simulate a login success
+          if (errors.length === 0) {
+            alert("Login successful! Welcome, " + usernameInput.value.trim() + ".");
+          }
+        });
+      
+        // Function to clear previous error messages
+        function clearErrors() {
+          const errorElements = document.querySelectorAll(".error-message");
+          errorElements.forEach((errorElement) => errorElement.remove());
+        }
+      
+        // Function to display error messages
+        function displayError(inputElement, message) {
+          const errorMessage = document.createElement("div");
+          errorMessage.className = "error-message";
+          errorMessage.style.color = "red";
+          errorMessage.style.fontSize = "12px";
+          errorMessage.textContent = message;
+          inputElement.parentElement.appendChild(errorMessage);
+        }
+      });
+    </script>
+    </body>
+    </html>
+</body>
+</html>

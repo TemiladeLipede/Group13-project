@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="Customer-Dashboard.Css">
+  <title>Customer Dashboard</title>
+</head>
+<body>
+  <div class="dashboard-container">
+    <header>
+      <h1>Welcome, Customer!</h1>
+      <button id="logoutButton">Logout</button>
+    </header>
+    <main>
+      <div class="card">
+        <h2>Profile</h2>
+        <p>View and edit your profile information.</p>
+      </div>
+      <div class="card">
+        <h2>Orders</h2>
+        <p>Track your orders and view details.</p>
+      </div>
+      <div class="card">
+        <h2>Support</h2>
+        <p>Contact support for any help or issues.</p>
+      </div>
+    
+    </main>
+  </div>
+  <script>
+    document.getElementById("logoutButton").addEventListener("click", function () {
+  const confirmLogout = confirm("Are you sure you want to log out?");
+  if (confirmLogout) {
+    window.location.href = "Customer-Dashboard.html"; 
+  }
+});
+  </script>
+</body>
+</html>

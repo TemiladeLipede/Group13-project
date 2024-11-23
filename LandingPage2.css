@@ -1,0 +1,180 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  
+  
+  .nav-bar {
+     display: flex;
+    align-items: center;
+    justify-content:space-between; /* Aligns logo on left, nav links on right */
+    background-color: #25b54b;
+    padding: 10px 20px;
+    position: fixed;
+    width: 100%;
+  }
+  
+  /* Logo Styling */
+  .logo {
+    color: white;
+    font-size: 24px;
+    text-decoration: none;
+    font-weight: bold;
+  }
+  
+
+  .nav-list {
+    list-style-type: none;
+    display: flex;
+  }
+  
+  /* List Item Styling */
+  .nav-list li {
+    margin-left: 20px;
+  }
+  
+  /* Link Styling */
+  .nav-list a {
+    color: white;
+    text-decoration: none;
+    font-size: 16px;
+    padding: 8px 12px;
+  }
+  .Text-Container{
+    height:400px;
+    background-image:url("/image\ folder/container 1 image.jpg");
+    background-size: contain;
+    display:flex;
+    color: white;
+    justify-content:center;
+    align-items: center;
+  }
+  .text-section{
+   padding:80px;
+   width:80%;
+   font-size:25px;
+
+  }
+  h2{
+    padding:20px;
+  }
+  .Image-Container{
+   padding:50px;
+   display:flex;
+   flex-direction:row;
+   justify-items:center;
+   align-items:center;
+   gap:50px;
+ 
+ }
+ .Image1{
+  flex-basis:100px;
+ }
+ .Image2{
+    flex-basis:100px
+ }
+ .Image3{
+    flex-basis:100px;
+ }
+.Container3{
+  display:flex;
+  flex-direction:row;
+  gap:50px;
+  
+}
+.text-1{
+  flex-basis:content;
+  font-weight:bold;
+}
+.text-2{
+ flex-basis:content;
+ font-weight:bold;
+}
+.Container4{
+   margin:30px;
+  text-align: center;
+
+}
+
+@media (max-width: 600px) {
+  /* Navbar */
+  .nav-bar {
+    flex-direction: column; 
+    align-items: flex-start; 
+    padding: 10px;
+  }
+  
+  .logo {
+    font-size: 20px; 
+  }
+  
+  .nav-list {
+    flex-direction: column; /* Stack nav links vertically */
+    width: 100%; /* Stretch links to take full width */
+    margin-top: 10px;
+  }
+  
+  .nav-list li {
+    margin: 10px 0; /* Add spacing between links */
+  }
+  
+  .nav-list a {
+    padding: 10px 0; /* Increase padding for easier tap targets */
+    font-size: 14px; /* Adjust font size for readability */
+  }
+
+  /* Text Container */
+  .Text-Container {
+    height: auto; /* Allow height to adjust based on content */
+    background-image:url("/image\ folder/container 1 image.jpg");
+    background-size: cover; /* Ensure background covers the section */
+    text-align: center; /* Center align text for mobile */
+    padding: 20px;
+  }
+
+  .text-section {
+    margin:20px;
+    padding: 20px;
+    font-size: 18px; 
+    width: 100%; 
+  }
+
+  h2 {
+    padding: 10px;
+    font-size: 20px; 
+  }
+
+  /* Image Container */
+  .Image-Container {
+    flex-direction: column;
+    align-items: center;
+    gap: 20px; 
+    padding: 20px;
+  }
+
+  .Image1,.Image2,.Image3 {
+    flex-basis: auto;
+    width: 80%; 
+    max-width: 200px; 
+  }
+
+  /* Container 3 */
+  .Container3 {
+    flex-direction: column; /* Stack text sections vertically */
+    gap: 20px; /* Add spacing between sections */
+    padding: 20px;
+  }
+
+  .text-1,.text-2 {
+    flex-basis: auto;
+    text-align: center; /* Center-align text for smaller screens */
+    font-size: 16px; /* Adjust font size for readability */
+  }
+
+
+  .Container4 {
+    margin: 20px;
+    text-align: center;
+  }
+}

@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="LandingPage2.Css">
+    <title>Bolt-taxi services </title>
+</head>
+<body>
+    <div class="nav-bar">
+        <label class="logo">Bolt</label>
+        <ul class="nav-list">
+        <li><a href="Drivers.html" target="_self">Driver</a></li>
+        <li><a href="Customer.html" target="_self">Customer</a></li>
+        <li><a href= "Sign-Up.html" target="_self">Sign-up</a></li>
+        <li><a href="Login.html"target="_self">Log-in</a></li>
+       </ul>
+    </div>
+<main class="Text-Container">
+    <div class="text-section">
+        <h1>Welcome To Bolt Taxi Services</h1>
+        <p>We’re thrilled to have you here. At bolt, we’re committed to making your travel experience smooth, comfortable, and safe. Whether you’re booking a ride to the airport, planning a night out, or just need a quick trip across town, we’ve got you covered. With our easy online booking system, professional drivers, and round-the-clock service, you’re just a few clicks away from a reliable ride. Thank you for choosing bolt—where your journey begins with comfort and ends with satisfaction. Book now and experience the difference!
+            </p>
+     <button id="bookRideBtn"><strong>BOOK A RIDE NOW!</strong></button>
+    </div>
+</main>
+<main class="Image-Container">
+        <div class="Image1">
+            <img src="/image folder/bolt admin workers.jpg" alt="We promise hospitable set of workers"> 
+            <p>we have a staff-strength of over 20,000</p>
+        </div>
+          <div class="Image2">
+            <img src="/image folder/pasted image 0.png" alt="Access across all mobile devices" height="100px;"width=90px>
+            <p>Access across all mobile(ios, Andriods, Windows, linux etc)</p>
+          </div>
+           <div class="Image3">
+            <img src="/image folder/bolt-driver.jpg" alt="Over 300 drivers here in nigeria">
+            <p>Over 300 drivers here in nigeria providing Jobs for alot of people</p>
+        </div>
+</main>
+<main class="Container3">  
+<div class="text-1">
+    <strong>Why become a Bolt driver?</strong>
+Whether you want to drive for a few hours occasionally or want to earn money more frequently, with Bolt you can fit driving around your schedule.
+Drive and earn when you like
+Earn during evenings and weekends, or make more money by driving more frequently. It’s up to you.
+</div>
+<div class="text-2"> 
+   <strong> Why become a bolt customer</strong>
+   Bolt is the all-in-one mobility app. Get picked up by a top-rated driver in minutes and enjoy a comfortable ride to wherever you're going; or skip the traffic entirely on one of our industry-leading scooters.</div>
+
+</main>
+<main class="Container4">
+<p> We are the best!!!!!!!!</p>
+&lt;&lt;&lt;&copy;Group13&gt;&gt;&gt;
+
+
+
+
+
+</main>
+<script>
+    // Alert on "Book a Ride Now" button click
+    const bookRideButton = document.getElementById('bookRideBtn');
+    bookRideButton.addEventListener('click', () => {
+        alert('Redirecting to booking page! 🚖');
+    });
+
+    
+
+    
+
+    // Scroll-to-section highlighting
+    const sections = document.querySelectorAll('main');
+    const navLinks = document.querySelectorAll('.nav-list a');
+    window.addEventListener('scroll', () => {
+        let current = '';
+        sections.forEach((section) => {
+            const sectionTop = section.offsetTop;
+            if (scrollY >= sectionTop - 60) {
+                current = section.getAttribute('id');
+            }
+        });
+
+        navLinks.forEach((link) => {
+            link.classList.remove('active');
+            if (link.getAttribute('href').includes(current)) {
+                link.classList.add('active');
+            }
+        });
+    });
+</script>
+</body>
+</html>

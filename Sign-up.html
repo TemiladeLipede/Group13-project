@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./Sign-up.Css">
+    <title>Bolt sign up</title>
+</head>
+<body>
+    <h1>Bolt-services </h1>
+   <main class="container">
+    
+    <div class="Inputs">
+        <label>First-name</label>
+        <input type="text"id="First-name" placeholder="Enter your First-name">
+    </div>
+    <div class="Inputs-2">
+        <label>Last-name</label>
+        <input type="text" id="Last-name" placeholder="Enter your Last-name">
+    </div>
+    <div class="Inputs-3">
+        <label>Location</label>
+        <input type="text" id="Locations" placeholder="Enter your Address">
+    </div>
+    
+    <div class="Inputs-4"> 
+     <label>You are registering as ???</label>
+        <select> 
+        <option>Customer</option>
+        <option>Driver</option>
+        <option> Car-rental</option>
+        </select>
+    </div>
+    <div class="Inputs-5">
+        <label>Phone-number</label>
+        <input type="tel" id="phone-number" >
+    </div>
+    <div class="Inputs-6">
+        <label>Email-address</label>
+       <input type="mail"  for="email" placeholder="ENTER YOUR MAIL">
+    </div>
+
+    <div class="Inputs-7">
+        <label>Date of birth</label>
+        <input type="date"id="Date">
+   </div>
+   <div class="Inputs-8">
+    <label>Username</label>
+    <input type="text" id="Username" placeholder="Enter your Username">
+   </div>
+   <div class="Inputs-8">
+    <label>New-Password</label>
+    <input type="text" id="New-Password" placeholder="Enter your Password">
+   </div>
+   <div class="Confirm-Password">
+    <label>Confirm-Password</label>
+    <input type="text" id="Confirm-Password" placeholder="Confirm your Password">
+   </div>
+<button id="register">Register</button>
+</main>
+<div class="external-class"> 
+<p> Already have an account</p>
+<button id="login"><a href="Login.html" target="_self">Login</a> </button>
+</div>
+<script>
+   document.addEventListener("DOMContentLoaded", () => {
+  
+  const registerButton = document.getElementById("register");
+  const firstName = document.getElementById("First-name");
+  const lastName = document.getElementById("Last-name");
+  const location = document.getElementById("Locations");
+  const phoneNumber = document.getElementById("phone-number");
+  const email = document.querySelector('input[for="email"]');
+  const dob = document.getElementById("Date");
+  const username = document.getElementById("Username");
+  const newPassword = document.getElementById("New-Password");
+  const confirmPassword = document.getElementById("Confirm-Password");
+
+
+  registerButton.addEventListener("click", (event) => {
+    event.preventDefault(); 
+
+
+    const errors = [];
+
+    if (!firstName.value.trim()) errors.push("First name is required.");
+    if (!lastName.value.trim()) errors.push("Last name is required.");
+    if (!location.value.trim()) errors.push("Location is required.");
+    if (!phoneNumber.value.trim() || !/^\d{10,15}$/.test(phoneNumber.value)) {
+      errors.push("Phone number must be 10-15 digits.");
+    }
+    if (!email.value.trim() || !/^\S+@\S+\.\S+$/.test(email.value)) {
+      errors.push("Invalid email address.");
+    }
+    if (!dob.value.trim()) errors.push("Date of birth is required.");
+    if (!username.value.trim()) errors.push("Username is required.");
+    if (!newPassword.value.trim()) errors.push("New password is required.");
+    if (!confirmPassword.value.trim()) errors.push("Confirm password is required.");
+    if (newPassword.value !== confirmPassword.value) {
+      errors.push("Passwords do not match.");
+    }
+    if (newPassword.value.length < 8) {
+      errors.push("Password must be at least 8 characters long.");
+    }
+
+    
+    if (errors.length > 0) {
+      alert(`Error(s):\n\n${errors.join("\n")}`);
+    } else {
+      alert("Registration successful! Welcome to Bolt Services!");
+      // Optionally, reset the form
+      firstName.value = "";
+      lastName.value = "";
+      location.value = "";
+      phoneNumber.value = "";
+      email.value = "";
+      dob.value = "";
+      username.value = "";
+      newPassword.value = "";
+      confirmPassword.value = "";
+    }
+  });
+});
+  </script>
+</body>
+</html>
